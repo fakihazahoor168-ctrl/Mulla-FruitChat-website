@@ -1,0 +1,177 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #FAF6F0;
+    color: #2D2722;
+    @apply transition-colors duration-500 antialiased font-poppins;
+  }
+}
+
+/* Custom fonts */
+.font-urdu {
+  font-family: 'Noto Nastaliq Urdu', 'Noto Sans Arabic', serif;
+  line-height: 2.2;
+}
+
+.font-poppins {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FDF8F2;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #E26A12;
+  border-radius: 9999px;
+  border: 2px solid #FDF8F2;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #C25505;
+}
+
+/* Hide scrollbar for clean horizontal carousel */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Ultra Premium Card Styles */
+.premium-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(235, 215, 195, 0.6);
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 30px -12px rgba(226, 106, 18, 0.06);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.premium-card:hover {
+  transform: translateY(-8px) scale(1.008);
+  border-color: rgba(226, 106, 18, 0.4);
+  box-shadow: 0 22px 45px -15px rgba(226, 106, 18, 0.2);
+}
+
+/* Premium Glassmorphism */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(226, 106, 18, 0.15);
+  box-shadow: 0 10px 35px 0 rgba(226, 106, 18, 0.06);
+}
+
+.glass-panel-dark {
+  background: rgba(26, 20, 16, 0.85);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 140, 50, 0.25);
+  box-shadow: 0 20px 50px 0 rgba(0, 0, 0, 0.35);
+}
+
+.glass-panel-heavy {
+  background: rgba(255, 246, 235, 0.92);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(226, 106, 18, 0.22);
+  box-shadow: 0 14px 40px 0 rgba(226, 106, 18, 0.1);
+}
+
+/* Shimmer & Glow Effects */
+.shimmer-text {
+  background: linear-gradient(135deg, #E26A12 0%, #FF802B 50%, #C25505 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #D97706 0%, #F59E0B 50%, #B45309 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Orange Glowing Buttons */
+.btn-orange-glow {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #FF5E00 0%, #FF8A00 50%, #E26A12 100%);
+  color: #FFFFFF;
+  font-weight: 800;
+  border-radius: 0.85rem;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 22px -5px rgba(255, 94, 0, 0.45);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-orange-glow:hover {
+  background: linear-gradient(135deg, #E25500 0%, #FF7F00 50%, #C25505 100%);
+  box-shadow: 0 12px 28px -4px rgba(255, 94, 0, 0.65);
+  transform: translateY(-2px) scale(1.02);
+}
+
+.btn-orange-glow:active {
+  transform: translateY(0) scale(0.97);
+}
+
+/* Category pills */
+.category-pill {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.category-pill:hover {
+  transform: translateY(-3px);
+}
+
+/* Image zoom HMR overlay */
+.img-zoom-wrapper {
+  overflow: hidden;
+  position: relative;
+}
+
+.img-zoom-wrapper img {
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.img-zoom-wrapper:hover img {
+  transform: scale(1.12);
+}
+
+/* Micro-animations */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(226, 106, 18, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 28px rgba(226, 106, 18, 0.55);
+  }
+}
+
+.pulse-glow {
+  animation: pulseGlow 2.2s infinite ease-in-out;
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float {
+  animation: floatSlow 4s infinite ease-in-out;
+}
